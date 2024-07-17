@@ -4,7 +4,13 @@ import {ref} from "vue";
 
 const isMenuOpen = ref(false);
 const toggleMenuOpen = () => {
-  return isMenuOpen.value = !isMenuOpen.value;
+  isMenuOpen.value = !isMenuOpen.value;
+
+  if (isMenuOpen.value) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 }
 </script>
 
