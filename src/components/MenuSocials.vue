@@ -28,3 +28,13 @@ import {Icon} from "@iconify/vue";
     />
   </a>
 </template>
+
+<style scoped lang="scss">
+.menu__link {
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    color: white;
+  }
+}
+</style>
