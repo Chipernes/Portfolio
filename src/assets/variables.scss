@@ -1,0 +1,22 @@
+// Variables
+$mainColor: #9C9C9C; // Default font color
+$headingColor: #ffffff;
+
+$whiteColor: #ffffff;
+
+// Fonts
+$mainFont: 'IBM Plex Mono', 'sans-serif';
+$headingFont: 'IBM Plex Mono', 'sans-serif';
+
+// Minimum page width
+$minWidth: 320;
+// Canvas (layout) width
+$maxWidth: 1280;
+// Bounding Container Width (0 = No Bounding)
+$maxWidthContainer: 1110;
+// General container padding
+// (30 = 15px left and right, 0 = no padding)
+$containerPadding: 30;
+
+// The width of the first breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
