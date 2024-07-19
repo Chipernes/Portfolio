@@ -1,37 +1,54 @@
 <script setup lang="ts">
-import MenuSocials from "@/components/MenuSocials.vue";
+import MenuSocials from "@/components/header/MenuSocials.vue";
 import {ref} from "vue";
 
 const isMenuOpen = ref(false);
 const toggleMenuOpen = () => {
-  return isMenuOpen.value = !isMenuOpen.value;
+  isMenuOpen.value = !isMenuOpen.value;
+
+  if (isMenuOpen.value) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 }
 </script>
 
 <template>
   <header class="header">
-    <nav class="header__menu menu">
-      <div class="menu__body" :class="{'menu-open': isMenuOpen}">
-        <ul class="menu__list">
-          <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Knowledge</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Projects</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Get In Touch</a></li>
-        </ul>
-        <div v-if="isMenuOpen" class="menu__socials">
+    <div class="header__container">
+      <nav class="header__menu menu">
+        <div class="menu__body" :class="{'menu-open': isMenuOpen}">
+          <ul class="menu__list">
+            <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Knowledge</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Projects</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Get In Touch</a></li>
+          </ul>
+          <div v-if="isMenuOpen" class="menu__socials">
+            <MenuSocials/>
+          </div>
+        </div>
+
+        <div class="menu__socials">
           <MenuSocials/>
         </div>
-      </div>
-
-      <div class="menu__socials">
-        <MenuSocials/>
-      </div>
-      <button @click="toggleMenuOpen" :class="{'menu-open': isMenuOpen}" class="icon-menu" type="button"><span></span></button>
-    </nav>
+        <button @click="toggleMenuOpen" :class="{'menu-open': isMenuOpen}" class="icon-menu" type="button"><span></span></button>
+      </nav>
+    </div>
   </header>
 </template>
 
 <style scoped lang="scss">
+.header {
+  position: fixed;
+  width: 100%;
+
+  &__container {
+    padding: 0;
+  }
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
@@ -40,8 +57,8 @@ const toggleMenuOpen = () => {
 
   @include adaptiveValue('padding-top', 25, 15);
   @include adaptiveValue('padding-bottom', 25, 15);
-  @include adaptiveValue('padding-left', 95, 15);
-  @include adaptiveValue('padding-right', 95, 15);
+  @include adaptiveValue('padding-left', 95, 15, $containerWidth, 600, 1);
+  @include adaptiveValue('padding-right', 95, 15, $containerWidth, 600, 1);
 
   @media (min-width: rem(1110)) {
     border-bottom-left-radius: 10px;
@@ -53,6 +70,7 @@ const toggleMenuOpen = () => {
       position: absolute;
       top: 0;
       left: 50%;
+      z-index: -1;
       transform: translateX(-50%);
 
       display: flex;
@@ -60,9 +78,9 @@ const toggleMenuOpen = () => {
       align-items: center;
       gap: 40px;
       width: 100%;
-      height: 100%;
+      height: 100vh;
 
-      background: rgba(27, 27, 27, 0.8);
+      background: rgba(27, 27, 27, 0.99);
 
       transition: all 0.3s ease 0s;
       opacity: 0;
@@ -70,12 +88,13 @@ const toggleMenuOpen = () => {
 
     &.menu-open {
       opacity: 1;
+      z-index: 5;
     }
   }
 
   &__list {
     display: flex;
-    @include adaptiveValue('gap', 70, 10);
+    @include adaptiveValue('gap', 70, 20, $containerWidth, 600, 1);
 
     @media (max-width: rem(600)) {
       flex-direction: column;
