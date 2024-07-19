@@ -19,23 +19,23 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
         <ul class="description__list">
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-html" />HTML</p>
-            <StarsRating stars-count="5"/>
+            <StarsRating :stars-count="5"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-css" />CSS/SCSS</p>
-            <StarsRating stars-count="5"/>
+            <StarsRating :stars-count="5"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-js-official" />JavaScript</p>
-            <StarsRating stars-count="4"/>
+            <StarsRating :stars-count="4"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-typescript-official" />TypeScript</p>
-            <StarsRating stars-count="4"/>
+            <StarsRating :stars-count="4"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-vue" />VueJs</p>
-            <StarsRating stars-count="3"/>
+            <StarsRating :stars-count="3"/>
           </li>
         </ul>
       </div>
@@ -44,15 +44,15 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
         <ul class="description__list">
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-git" />Git</p>
-            <StarsRating stars-count="4"/>
+            <StarsRating :stars-count="4"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="solar:figma-bold-duotone"  style="color: #f44c1c" />Figma</p>
-            <StarsRating stars-count="5"/>
+            <StarsRating :stars-count="5"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-tailwind" />Tailwind</p>
-            <StarsRating stars-count="4"/>
+            <StarsRating :stars-count="4"/>
           </li>
         </ul>
       </div>
