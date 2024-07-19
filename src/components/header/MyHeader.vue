@@ -18,7 +18,7 @@ const toggleMenuOpen = () => {
   <header class="header">
     <div class="header__container">
       <nav class="header__menu menu">
-        <div class="menu__body" :class="{'menu-open': isMenuOpen}">
+        <div class="menu__body" :class="{'menu-open': isMenuOpen}" v-show="isMenuOpen">
           <ul class="menu__list">
             <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
             <li class="menu__item"><a href="#" class="menu__link">Knowledge</a></li>
@@ -42,6 +42,7 @@ const toggleMenuOpen = () => {
 <style scoped lang="scss">
 .header {
   position: fixed;
+  z-index: 10;
   width: 100%;
 
   &__container {
