@@ -6,7 +6,7 @@ type Props = {
   title: string,
   description: string,
   link: string,
-  color: 'blue' | 'orange' | 'green'
+  color: string
 }
 
 defineProps<Props>()
