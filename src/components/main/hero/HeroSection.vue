@@ -8,9 +8,9 @@ import {Icon} from "@iconify/vue";
       <div class="hero__inner">
         <h1 class="hero__title">Nikita Motytskyi</h1>
         <p class="hero__text">Hello! I'm Nikita, a Frontend Developer. I create user-friendly interfaces using JavaScript, TypeScript, and Vue.js.</p>
-        <a class="hero__button" href="#skills">
-          Let’s get started
-          <Icon class="hero__icon" icon="weui:arrow-filled" />
+        <a download="" class="hero__button" href="/pdf/CV-Nikita-Motytskyi.pdf">
+          Download CV
+          <Icon icon="material-symbols:download" width="30" height="30" />
         </a>
       </div>
       <div>
@@ -68,13 +68,16 @@ import {Icon} from "@iconify/vue";
   &__button {
     display: inline-flex;
     align-items: center;
+    gap: rem(10);
 
-    @include adaptiveValue('padding-top', 20, 15);
-    @include adaptiveValue('padding-bottom', 20, 15);
-    @include adaptiveValue('padding-left', 65, 30);
-    @include adaptiveValue('padding-right', 65, 30);
+    @include adaptiveValue('padding-top', 15, 10);
+    @include adaptiveValue('padding-bottom', 15, 10);
+    @include adaptiveValue('padding-left', 50, 25);
+    @include adaptiveValue('padding-right', 50, 25);
 
     font-weight: bold;
+    font-size: rem(20);
+    font-family: $mainFont;
     color: $whiteColor;
 
     background: #3F8E00;
@@ -82,6 +85,11 @@ import {Icon} from "@iconify/vue";
     border-radius: rem(4);
     box-shadow: 0 0 6px #61d704;
     transition: all 0.3s ease 0s;
+
+    @media (max-width: rem(500)) {
+      width: 100%;
+      justify-content: center;
+    }
 
     @media (hover:hover) {
       &:hover {
