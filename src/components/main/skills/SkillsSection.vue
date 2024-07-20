@@ -6,7 +6,7 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
 </script>
 
 <template>
-<div class="skills">
+<section class="skills" id="skills">
   <div class="skills__container">
     <div class="skills__heading">
       <SectionHeading
@@ -58,7 +58,7 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
       </div>
     </div>
   </div>
-</div>
+</section>
 </template>
 
 <style scoped lang="scss">

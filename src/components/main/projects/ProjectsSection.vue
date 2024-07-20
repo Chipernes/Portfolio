@@ -58,7 +58,7 @@ const projects = [
 </script>
 
 <template>
-  <section class="projects">
+  <section class="projects" id="projects">
     <div class="projects__container">
       <SectionHeading title="Projects" text="This section highlights projects I've completed, showcasing my frontend development experience." />
       <div class="projects__inner">

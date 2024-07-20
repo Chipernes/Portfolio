@@ -4,7 +4,7 @@ import {Icon} from "@iconify/vue";
 </script>
 
 <template>
-<section class="connection">
+<section class="connection" id="connection">
   <div class="connection__container">
     <SectionHeading color="white" title="Get In Touch" text="In this section, you'll find ways to contact me for any inquiries, collaborations, or project discussions. Feel free to reach out!" />
     <div class="connection__socials">

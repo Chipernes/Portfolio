@@ -3,12 +3,12 @@ import {Icon} from "@iconify/vue";
 </script>
 
 <template>
-  <div class="hero">
+  <section class="hero" id="hero">
     <div class="hero__container">
       <div class="hero__inner">
         <h1 class="hero__title">Nikita Motytskyi</h1>
         <p class="hero__text">Hello! I'm Nikita, a Frontend Developer. I create user-friendly interfaces using JavaScript, TypeScript, and Vue.js.</p>
-        <a class="hero__button" href="">
+        <a class="hero__button" href="#skills">
           Let’s get started
           <Icon class="hero__icon" icon="weui:arrow-filled" />
         </a>
@@ -17,7 +17,7 @@ import {Icon} from "@iconify/vue";
         <img class="hero__photo" src="/photo.jpg" alt="photo">
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
