@@ -4,13 +4,21 @@ import {ref} from "vue";
 
 const isMenuOpen = ref(false);
 const toggleMenuOpen = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-
   if (isMenuOpen.value) {
-    document.body.style.overflow = 'hidden';
+    closeMenu();
   } else {
-    document.body.style.overflow = '';
+    openMenu();
   }
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+  document.body.style.overflow = '';
+}
+
+const openMenu = () => {
+  isMenuOpen.value = true;
+  document.body.style.overflow = 'hidden';
 }
 </script>
 
@@ -18,12 +26,12 @@ const toggleMenuOpen = () => {
   <header class="header">
     <div class="header__container">
       <nav class="header__menu menu">
-        <div class="menu__body" :class="{'menu-open': isMenuOpen}" v-show="isMenuOpen">
+        <div @click="closeMenu" class="menu__body" :class="{'menu-open': isMenuOpen}">
           <ul class="menu__list">
-            <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Knowledge</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Projects</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Get In Touch</a></li>
+            <li class="menu__item"><a href="#hero" class="menu__link">Home</a></li>
+            <li class="menu__item"><a href="#skills" class="menu__link">Skills</a></li>
+            <li class="menu__item"><a href="#projects" class="menu__link">Projects</a></li>
+            <li class="menu__item"><a href="#connection" class="menu__link">Get In Touch</a></li>
           </ul>
           <div v-if="isMenuOpen" class="menu__socials">
             <MenuSocials/>
@@ -74,7 +82,7 @@ const toggleMenuOpen = () => {
       z-index: -1;
       transform: translateX(-50%);
 
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: center;
       gap: 40px;
@@ -82,13 +90,10 @@ const toggleMenuOpen = () => {
       height: 100vh;
 
       background: rgba(27, 27, 27, 0.99);
-
-      transition: all 0.3s ease 0s;
-      opacity: 0;
     }
 
     &.menu-open {
-      opacity: 1;
+      display: flex;
       z-index: 5;
     }
   }

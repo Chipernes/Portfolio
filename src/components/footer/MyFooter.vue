@@ -13,10 +13,6 @@
 
 <style scoped lang="scss">
 .footer {
-  /* TEMP */
-  margin-top: rem(100);
-  /* TEMP */
-
   padding: rem(25) 0;
 
   text-align: center;

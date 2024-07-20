@@ -1,16 +1,24 @@
 <script setup lang="ts">
 type Props = {
   title: string,
-  text: string
+  text: string,
+  color?: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
+const getTitleColor = () => {
+  if (props.color === 'white') {
+    return '#ffffff';
+  } else {
+    return '#080808';
+  }
+}
 </script>
 
 <template>
 <div class="heading">
-  <h2 class="heading__title">{{ title }}</h2>
+  <h2 :style="`color: ${getTitleColor()}`" class="heading__title">{{ title }}</h2>
   <p class="heading__text">{{ text }}</p>
 </div>
 </template>
