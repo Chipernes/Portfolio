@@ -53,6 +53,16 @@ const projects = [
     imageLink: 'https://hangman-rosy-six.vercel.app/',
     imageName: 'hangman',
     color: 'green'
+  },
+  {
+    id: 6,
+    title: 'List of interviews',
+    descriptionLink: 'https://github.com/Chipernes/List-of-interviews',
+    description: 'List of Interviews is a website that allows users to organize, schedule, and track interviews with ease.',
+    label: 'Front part (VueJs)',
+    imageLink: 'https://list-of-interviews-roan.vercel.app/',
+    imageName: 'list-of-interviews',
+    color: 'green'
   }
 ];
 </script>
