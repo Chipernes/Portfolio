@@ -8,7 +8,7 @@ import {Icon} from "@iconify/vue";
       <div class="hero__inner">
         <h1 class="hero__title">Nikita Motytskyi</h1>
         <p class="hero__text">Hello! I'm Nikita, a Frontend Developer. I create user-friendly interfaces using JavaScript, TypeScript, and Vue.js.</p>
-        <a download="" class="hero__button" href="/pdf/CV-Nikita-Motytskyi.pdf">
+        <a download="" class="hero__button" href="/pdf/Nikita_Motytskyi.pdf">
           Download CV
           <Icon icon="material-symbols:download" width="30" height="30" />
         </a>
