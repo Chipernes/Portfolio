@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import SectionHeading from "@/components/common/SectionHeading.vue";
 import {Icon} from "@iconify/vue";
-import StarsRating from "@/components/main/skills/StarsRating.vue";
 
 </script>
 
@@ -15,44 +14,59 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
     </div>
     <div class="skills__description description">
       <div class="description__inner">
-        <h3 class="description__title">Front-end</h3>
+        <h3 class="description__title">Programming Languages</h3>
         <ul class="description__list">
           <li class="description__item">
-            <p class="description__technology"><Icon icon="vscode-icons:file-type-html" />HTML</p>
-            <StarsRating :stars-count="5"/>
-          </li>
-          <li class="description__item">
-            <p class="description__technology"><Icon icon="vscode-icons:file-type-css" />CSS/SCSS</p>
-            <StarsRating :stars-count="5"/>
-          </li>
-          <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-js-official" />JavaScript</p>
-            <StarsRating :stars-count="4"/>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-typescript-official" />TypeScript</p>
-            <StarsRating :stars-count="4"/>
+          </li>
+        </ul>
+
+        <h3 class="description__title">JS Frameworks</h3>
+        <ul class="description__list">
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="vscode-icons:file-type-vue" />Vue.js (Vuetify, Vite)</p>
+          </li>
+        </ul>
+
+        <h3 class="description__title">Languages</h3>
+        <ul class="description__list">
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="uil:english-to-chinese" style="color: #4c8bf5" />English (upper intermediate)</p>
           </li>
           <li class="description__item">
-            <p class="description__technology"><Icon icon="vscode-icons:file-type-vue" />VueJs</p>
-            <StarsRating :stars-count="3"/>
+            <p class="description__technology"><Icon icon="uil:english-to-chinese" style="color: #4c8bf5" />Ukrainian (native)</p>
           </li>
         </ul>
       </div>
       <div class="description__inner">
-        <h3 class="description__title">Other</h3>
+        <h3 class="description__title">Others</h3>
         <ul class="description__list">
           <li class="description__item">
-            <p class="description__technology"><Icon icon="vscode-icons:file-type-git" />Git</p>
-            <StarsRating :stars-count="4"/>
+            <p class="description__technology"><Icon icon="vscode-icons:file-type-html" />HTML</p>
           </li>
           <li class="description__item">
-            <p class="description__technology"><Icon icon="solar:figma-bold-duotone"  style="color: #f44c1c" />Figma</p>
-            <StarsRating :stars-count="5"/>
+            <p class="description__technology"><Icon icon="vscode-icons:file-type-css" />CSS/SCSS</p>
           </li>
           <li class="description__item">
             <p class="description__technology"><Icon icon="vscode-icons:file-type-tailwind" />Tailwind</p>
-            <StarsRating :stars-count="4"/>
+          </li>
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="akar-icons:php-fill"  style="color: #777bb3" />PHP</p>
+          </li>
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="vscode-icons:file-type-git" />Git</p>
+          </li>
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="mdi:eslint"  style="color: #4a31c3" />ESLint</p>
+          </li>
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="solar:figma-bold-duotone"  style="color: #f44c1c" />Figma</p>
+          </li>
+          <li class="description__item">
+            <p class="description__technology"><Icon icon="mage:photoshop"  style="color: #001e36" />Photoshop</p>
           </li>
         </ul>
       </div>
@@ -69,13 +83,11 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
 .description {
   display: flex;
   justify-content: space-evenly;
-  gap: rem(10);
   @include adaptiveValue('margin-top', 40, 15);
 
   @media (max-width: rem(600)) {
     flex-direction: column;
     text-align: center;
-    gap: rem(40);
   }
 
   &__inner {
@@ -98,6 +110,11 @@ import StarsRating from "@/components/main/skills/StarsRating.vue";
     flex-direction: column;
     gap: rem(15);
     margin-top: rem(20);
+    margin-bottom: rem(30);
+
+    @media (max-width: rem(600)) {
+      align-items: center;
+    }
   }
 
   &__item {
